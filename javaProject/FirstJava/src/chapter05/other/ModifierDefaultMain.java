@@ -8,10 +8,10 @@ public class ModifierDefaultMain {
 		
 		ModifierDefault md = new ModifierDefault();
 		
-		md.name = "손흥민";
-		md.age = 20;
+	//	md.name = "손흥민";
+	//	md.age = 20;
 		
-		md.tell();
+	//	md.tell();
 		
 
 	}
