@@ -14,10 +14,6 @@ public class Person {
 	public Person(String name, int id){
 		this.name = name;
 		this.id = id;
-		
-		if() {
-			
-		}
 	}
 	
 	
