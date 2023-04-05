@@ -2,6 +2,8 @@ package chapter10;
 
 import java.util.Scanner;
 
+import Exception.BadInputException;
+
 public class ThrowExceptionTest {
 
 	public static void main(String[] args) {

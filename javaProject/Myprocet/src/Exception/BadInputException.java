@@ -1,4 +1,4 @@
-package chapter10;
+package Exception;
 
 public class BadInputException extends Exception {
 
