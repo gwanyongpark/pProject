@@ -1,9 +1,17 @@
 package Exception;
 
 public class BadIdInputException extends Exception {
-	
-	void BadInputException(String message) {
-		
-		super("영문자와 숫자로만 입력해주세요");
+
+	public BadIdInputException() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
+
+	public BadIdInputException(String message) {
+		super(message);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
 }

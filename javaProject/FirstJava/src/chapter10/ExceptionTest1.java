@@ -1,39 +1,19 @@
 package chapter10;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ExceptionTest1 {
 
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
-	
+		Scanner sc = new Scanner(System.in); 
+		
 		System.out.println("프로그램을 시작합니다.");
 		System.out.println("정수 하나를 입력하세요. ");
-		
-		int num1 = 0;
-		int num2= 0;
-		
-		try {
-			num1 = sc.nextInt();
-		} catch(InputMismatchException e) {
-			System.out.println("숫자만 입력하세요!");
-		}
+		int num1 = sc.nextInt();
 		
 		System.out.println("두번째 정수를 입력하세요.");
-		
-		try {
-			num2 = sc.nextInt();
-		} catch (InputMismatchException e) {
-			System.out.println("숫자만 입력하세요!");
-		}
 		int num2 = sc.nextInt();
-		
-		
-		
-		
-		
 		
 		// if를 이용해서 예외처리
 		if(num2==0) {
@@ -43,11 +23,13 @@ public class ExceptionTest1 {
 		}
 		
 		System.out.println(num1/num2);
-		System.out.println("프로그램을 종료합니다.");
+		System.out.println("프로그램을 종료 합니다.");
 
 	}
 
 }
+
+
 
 
 

@@ -1,6 +1,5 @@
 package Exception;
 
-import java.awt.Robot;
 import java.util.Scanner;
 
 public class Exam1 {
@@ -18,11 +17,11 @@ public class Exam1 {
 		for(int i=0; i<id.length(); i++) {
 			char c = id.charAt(i);
 			// 영문자 대문자 /소문자/숫자
-			if(!(c>='A' && c<='Z' || c>='a' && c='z'|| c>='0' && c<='9')) {
+			if(!(c>='A' && c<='Z' || c>='a' && c<= 'z'|| c>='0' && c<='9')) {
 				// 예외클래스 정의해서 예외발생
-				throw new ExamIdInputEsception(id);
+				
 				try {
-						throw new Exception(); //예외 발생
+					throw new BadIdInputException(id); //예외 발생
 				} catch(Exception e ) {
 					System.out.println("입력값은 영문자 소문자/대문자와 숫자만 가능합니다.");
 					System.out.println(e.getMessage());
