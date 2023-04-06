@@ -3,14 +3,15 @@ package CollectionFrameWork;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class FootballPlayer {
 	
-	String name;
-	int number;
-	String team;
-	int age;
+	private String name;
+	private int number;
+	private String team;
+	private int age;
+	
 
-		// 1. 축구선수 인스턴스를 저장할 수 있는 List<E> 컬렉션 인스턴스를 생성해서 인스턴스를 저장하고 출력하는 프로그램을 만들어 봅시다.
 	
 	public static void main(String[] args) {
 		
@@ -35,12 +36,12 @@ public class FootballPlayer {
 		footballPlayer3.name = "백승호";
 		footballPlayer3.number = 5;
 		footballPlayer3.team = "전북현대";
-		footballPlayer3.age = 24;
+		footballPlayer3.age = 27;
 		
 		footballPlayer4.name = "조규성";
 		footballPlayer4.number = 11;
 		footballPlayer4.team = "전북현대";
-		footballPlayer4.age = 28;
+		footballPlayer4.age = 26;
 		
 		players.add(footballPlayer1);
 		players.add(footballPlayer2);
@@ -57,12 +58,6 @@ public class FootballPlayer {
 		// 2. 축구선수의 인스턴스가 팀과 이름 그리고 나이가 같으면 같은 선수라 판단하고 입력이 되지 않도록 Set<E> 컬렉션을 이용해서 
 		// 축구선수 인스턴스를 저장하고 출력하는 프로그램을 만들어 봅시다. 
 
-		
-		
-		
-		
-	
-	
 	
 	
 	}
