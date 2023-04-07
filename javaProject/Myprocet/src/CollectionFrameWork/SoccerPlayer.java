@@ -67,6 +67,29 @@ public class SoccerPlayer {
 		public void showInfo() {
 			System.out.printf("[%s] %s(%d, %d)\n", this.team, this.name, this.number, this.age);
 		}
+
+		@Override
+		public int hashCode() {
+			// TODO Auto-generated method stub
+			return super.hashCode();
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+//				
+//				boolean result = false;
+//				
+//				if(obj != null && obj instanceof SoccerPlayer) {
+//					
+//					SoccerPlayer player = (SoccerPlayer)obj;
+//			result = this.team.equals(player.getTeam)
+				}
+
+		}
+			
+		
+		
+		
 		
 	}
 
