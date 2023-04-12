@@ -140,15 +140,41 @@ from emp
 order by deptno
 ;
 
+-- 직급에 따라 급여를 인상하도록 하자. 
+-- 직급이 'ANALYST'인 사원은 5%, 
+--       'SALESMAN'인 사원은 10%, 
+--       'MANAGER'인 사원은 15%, 
+--       'CLERK'인 사원은 20%인 인상한다.
 select ename, job, sal,
-    decode(job ,sal,
-    'ANALYST', sal*1.05,
-    'SALESMAN', sal*1.1,
-    'MANAGER', sal*1.15,
-    'CLERK', sal*1.2
-    ) as upsal
+        decode( job,
+            'ANALYST', sal*1.05,
+            'SALESMAN', sal*1.1,
+            'MANAGER', sal*1.15,
+            'CLERK', sal*1.2
+        ) as up,
+        nvl(decode( job,
+            'ANALYST', sal*1.05,
+            'SALESMAN', sal*1.1,
+            'MANAGER', sal*1.15,
+            'CLERK', sal*1.2
+        ), sal) as UPSAL
 from emp
-order by sal desc
+order by sal desc;
+
+select ename, deptno,
+        decode(deptno,
+                10, 'ACCOUNTING',
+                20, 'RESEARCH',
+                30, 'SALE',
+                40, 'OPERATIONS'
+        ) as dname,
+        case when deptno=10 then 'ACCOUNTING'
+            when deptno=20 then 'RESEARCH'
+            when deptno=30 then 'SALES'
+            else 'OPERATIONS'
+        end as dname2
+from emp
+order by deptno
 ;
 
 
