@@ -25,7 +25,7 @@ from emp, dept
 where emp.deptno = dept.deptno
 ;
 
-
+-- inner join
 select *
 from emp inner join dept
 on emp.deptno = dept.deptno
