@@ -141,7 +141,7 @@ insert into emp02 (job, deptno)values ('MANAGER', 10);
 
 -- emp03 생성 : 사원번호, 사원이름, 직급, 부서번호
 -- empno : unique
--- ename : noy null
+-- ename : not null
 drop table emp03;
 create table emp03(
     empno number(4) unique,
@@ -154,7 +154,7 @@ desc emp03;
 insert into emp03 values (1111, 'KING', 'MANAGER', 10);
 insert into emp03 values (1112, 'SON', 'MANAGER', 20);
 
-drop table emp06;
+drop table emp03;
 
 select * from emp03;
 -- not null unique 함께 사용
