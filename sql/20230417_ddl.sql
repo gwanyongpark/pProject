@@ -109,7 +109,7 @@ select * from emp02;
 truncate table emp02;
 
 select * from emp03;
-delete from emp03;
+delete from emp03;      -- DML
 rollback;
 
 
