@@ -30,7 +30,7 @@ public class SelectTest2 {
 			// 3. Statement / PreparedStatement => sql 실행 요청 메소드
 			
 			// sql
-			String sql = "select*from dept where deptno=?";
+			String sql = "select * from dept where deptno=?";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			// ? 파라미터 설정
 			pstmt.setInt(1, 10);
@@ -39,16 +39,17 @@ public class SelectTest2 {
 		
 			// 4. Select의 결과 데이터는 ResultSet 객체로 받는다.
 			// select 실행 메소드 : executeQuery()
-			ResultSet rs = pstmt.executeQuery(); // ()안에 sql X ~> 만들 때 이미 sql을 가지고 만들었고, 해당 값을 setInt,setString에 입력했기 때문에 
+			ResultSet rs = pstmt.executeQuery(); // ()안에 sql X ~> 만들 때 이미 sql을 가지고 만들었기 때문에
 			
 			// 5. ResultSet 객체에서 데이터 추출
 //			while(rs.next()) {
 //				System.out.println(rs.getInt(1) + "\t" + rs.getString(2) + "\t" + rs.getString(3));
 //			}
 			
+			// 예상하는 결과가 하나라면 if를 사용해 처리 가능
 			if(rs.next()) {
 				System.out.println(rs.getInt(1) + "\t" + rs.getString(2) + "\t" + rs.getString(3));
-			}
+			} 
 			
 			rs.close();
 			pstmt.close();

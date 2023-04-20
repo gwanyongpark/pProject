@@ -39,9 +39,10 @@ public class DeleteTest {
 			
 			int result = pstmt.executeUpdate();
 			
+			// pk이므로 1보다 큰 값이 나올 수 없음 (pk는 중복불가)
 			if(result==1) {
 				System.out.println("데이터가 삭제되었습니다.");
-			} 
+			}
 			
 			// 완료 commit
 			conn.commit();

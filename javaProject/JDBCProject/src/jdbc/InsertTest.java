@@ -29,12 +29,11 @@ public class InsertTest {
 			// insert Sql
 			String sql = "insert into dept values (?, ?, ?)";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setString(2, "개발팀");
 			pstmt.setInt(1, 50);
 			pstmt.setString(2, "개발팀");
 			pstmt.setString(3, "서울");
 			
-			int result = pstmt.executeUpdate();
+			int result = pstmt.executeUpdate(); // int => 처리된 row 개수 반환 / executeUpdate -> DML 실행 요청 후 결과 반환
 			
 			if(result>0) {
 				System.out.println("데이터가 입력되었습니다.");
