@@ -12,7 +12,7 @@ public class ConnectionProvider {
 		
 		// DB URL
 		String dbUrl = "jdbc:mysql://localhost:3306/project";
-		return DriverManager.getConnection(dbUrl, "himedia", "tiger");
+		return DriverManager.getConnection(dbUrl, "himedia", "as8744034!");
 		
 	}
 	

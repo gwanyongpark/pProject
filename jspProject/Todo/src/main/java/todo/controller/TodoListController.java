@@ -6,14 +6,16 @@ import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import todo.domain.TodoDTO;
 import todo.service.TodoListService;
 
-@WebServlet(name = "todoListController", urlPatterns = "/todo/list")
+@WebServlet(name = "TodoListController", urlPatterns = "/todo/list")
 public class TodoListController extends HttpServlet {
 
 	
@@ -36,6 +38,22 @@ public class TodoListController extends HttpServlet {
 		
 		System.out.println("TodoListController... doGet()...");
 		
+//		// 회원의 로그인 여부를 확인 후 비로그인 상태 -> 로그인 페이지로 이동
+//		HttpSession session = request.getSession();
+//				
+//		// 1. session이 새로 만들어진 session이 아니고 session에 로그인 정보를 가지고 있다면 => 로그인 상태
+//		// 리디레션 => 로그인 페이지
+//		// 2. 새로 만들어진 session이거나 session에 로그인 정보가 없다면
+//		if(session.isNew() || session.getAttribute("LoginInfo")== null) {
+//					
+//			System.out.println("로그인 상태가 아닙니다.");
+//			// 로그인 페이지로 리디렉션
+//			response.sendRedirect("/app/login");
+//					
+//			return;
+//		}
+		
+		
 		// 1. 사용자 요청의 분석
 		// 2. Seveice에 요청 -> 응답 데이터 반환
 		
@@ -46,9 +64,15 @@ public class TodoListController extends HttpServlet {
 		// 3. 응답 데이터 request의 속성에 저장 : view로 데이터 전달
 		request.setAttribute("todoList", list);
 		
+		// 쿠키 설정
+		// 1. Cookie 객체 생성
+		Cookie cookie = new Cookie("uname", "cool");
+		// 2. response.addCookie(쿠키 객체);
+		response.addCookie(cookie);
+		
 		// 4. view 지정 -> forward
 		
-		String viewPath = "/WEB-INF/views/todo/list.jsp";
+		String viewPath = "/WEB-INF/view/todo/list.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
 		dispatcher.forward(request, response);
 		

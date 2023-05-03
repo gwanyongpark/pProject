@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Todo LIST</h1>
+<h1>Todo LIST( ${loginInfo })</h1>
 
 <ul>
 
@@ -23,6 +23,14 @@
 
 
 <a href="${pageContext.request.contextPath}/todo/register">Todo Register</a>
+
+<c:if test="${loginInfo eq null}">
+<a href="/app/login"> 로그인 </a>
+</c:if>
+
+<c:if test="${loginInfo ne null}">
+<a href="/app/logout"> 로그아웃 </a>
+</c:if>
 
 </body>
 </html>
