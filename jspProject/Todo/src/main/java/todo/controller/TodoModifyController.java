@@ -36,7 +36,7 @@ public class TodoModifyController extends HttpServlet {
 		// 1. session이 새로 만들어진 session이 아니고 session에 로그인 정보를 가지고 있다면 => 로그인 상태
 		// 리디레션 => 로그인 페이지
 		// 2. 새로 만들어진 session이거나 session에 로그인 정보가 없다면
-		if(session.isNew() || session.getAttribute("LoginInfo")== null) {
+		if(session.isNew() || session.getAttribute("loginInfo")== null) {
 					
 			System.out.println("로그인 상태가 아닙니다.");
 			// 로그인 페이지로 리디렉션

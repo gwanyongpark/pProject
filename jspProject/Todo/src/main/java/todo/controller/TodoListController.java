@@ -65,9 +65,9 @@ public class TodoListController extends HttpServlet {
 		request.setAttribute("todoList", list);
 		
 		// 쿠키 설정
-		// 1. Cookie 객체 생성
+		// 3-1. Cookie 객체 생성
 		Cookie cookie = new Cookie("uname", "cool");
-		// 2. response.addCookie(쿠키 객체);
+		// 3-2. response.addCookie(쿠키 객체);
 		response.addCookie(cookie);
 		
 		// 4. view 지정 -> forward

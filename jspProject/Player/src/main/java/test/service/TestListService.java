@@ -1,39 +1,31 @@
-package todo.service;
+package test.service;
 
 import java.sql.Connection;
-
-
 import java.sql.SQLException;
 import java.util.List;
 
-import todo.dao.TodoDAO;
-import todo.domain.TodoDTO;
-import todo.util.ConnectionProvider;
+import test.dao.TestDAO;
+import test.domain.TestDTO;
+import test.util.ConnectionProvider;
 
-public class TodoListService {
+public class TestListService {
 	
-	TodoDAO dao;
+	TestDAO dao;
 
-	private TodoListService() {
-		this.dao = TodoDAO.getInstance();
+	private TestListService() {
+		this.dao = TestDAO.getInstance();
 	}
 	
-	private static TodoListService service = new TodoListService();
+	private static TestListService service = new TestListService();
 	
-	public static TodoListService getInstance() {
+	public static TestListService getInstance() {
 		return service;
 	}
 	
-	
-	
-	
-	public List<TodoDTO> getList(){
-		
-		// 데이터 처리
-		// 트렌젝션 처리
+	public List<TestDTO> getList(){
 		
 		Connection conn = null;
-		List<TodoDTO> list = null;
+		List<TestDTO> list = null;
 		
 		try {
 			conn = ConnectionProvider.getConnection();
@@ -57,7 +49,7 @@ public class TodoListService {
 		}
 		
 		return list;
-		
+	
 	}
 	
 

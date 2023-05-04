@@ -8,6 +8,18 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<h1>Test List()</h1>
+
+<ul>
+
+</ul>
+
+</body>
+</html>
+
+
+<!--
 <h1>Todo LIST ( ${loginInfo.uid} [${loginInfo.uname}])</h1>
 
 <ul>
@@ -31,4 +43,5 @@
 </c:if>
 
 </body>
-</html>
+</html> 
+ -->
