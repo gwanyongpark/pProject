@@ -12,7 +12,7 @@
         <logger name="org.springframework" level="INFO" additivity="false">
             <appender-ref ref="console"/>
         </logger>
-        <logger name="com.hi.app" level="INFO" additivity="false">
+        <logger name="com.exam.app" level="INFO" additivity="false">
             <appender-ref ref="console"/>
         </logger>
         <root level="INFO" additivity="false">

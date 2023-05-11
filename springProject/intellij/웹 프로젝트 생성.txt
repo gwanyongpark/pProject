@@ -20,8 +20,39 @@
 
   - log4j2 설정 : log4j2.xml 설정 ( com.hi.AAA ) 
 ---------------------------------------------------------------------
+# TodoList
+main.java에 controller,dao,domain,service,util 폴더 생성
+
+구성 : 
+list  - get
+read - get
+modify - get
+register - get ~> post
+delete - 
+
+Controller.TodoListController
+views.todo.list
+Controller.TodoRegistController
+view.todo.registForm
+Controller.TodoReadController
+view.todo.read
+Controller.TodoModifyController
+views.todo.modifyForm
+Controller.TodoDeleteController
+---------------------------------------------------------------------
 웹 화면 + 처리
 
 - Controller : @Controller, @RequestMapping
 - View ( JSP )
 - Model : Service, DAO
+
+---------------------------------------------------------------------
+사용자 입력 데이터 받기
+
+- encoding filter 등록 : web.xml
+  org.springframework.web.filter.CharacterEncodingFilter
+
+
+#SearchController -> search.search1 -> UserRequest
+---------------------------------------------------------------------
+
