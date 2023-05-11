@@ -18,7 +18,7 @@
   <h3>${todo}</h3>
 
   <form method="post">
-    tno <input type="text" name="tno" readonly>
+    tno <input type="text" name="tno" readonly> <br>
     todo <input type="text" name="todo"> <br>
     duedate <input type="date" name="duedate"> <br>
     <input type="checkbox" name="complete"> <br>
