@@ -14,7 +14,7 @@
 
     <h1>todo : ${todo}</h1>
     <h1>duedate : ${duedate}</h1>
-    <h1>todoRequest : ${todoReqeust}</h1>
+    <h1>todoRequest : ${todoRequest}</h1>
 
 
 </body>

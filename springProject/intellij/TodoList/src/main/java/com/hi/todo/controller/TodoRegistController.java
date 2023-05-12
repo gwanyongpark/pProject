@@ -29,7 +29,7 @@ public class TodoRegistController {
             Model model,
             String todo,
             String duedate,
-            @RequestParam(value = "todo", required = false) String requstTodo,
+            @RequestParam(value = "todo", required = false) String requestTodo,
             @RequestParam(value = "duedate", defaultValue = "2023-12-25") String requestDuedate,
             TodoRequest todoRequest
     ){      // todoRequest
@@ -38,7 +38,7 @@ public class TodoRegistController {
         log.info("todo : " + todo);
         log.info("duedate : " + duedate);
 
-        log.info("todo : " + requstTodo);
+        log.info("todo : " + requestTodo);
         log.info("duedate : " + requestDuedate);
 
         // Command 클래스 정의 : 파라미터를 받는 변수 선언
@@ -49,8 +49,8 @@ public class TodoRegistController {
         model.addAttribute("todo", todo);
         model.addAttribute("duedate", duedate);
 
-        // return "todo/regist"; // /WEB-INF/views/todo/regist.jsp
-         return "redirect:/todo/list";
+         return "todo/regist"; // /WEB-INF/views/todo/regist.jsp
+        // return "redirect:/todo/list";
         // 일반 view 와 구분은 redirect: 문자열로 구분
         // http://localhost:8080/todo/list
     }
