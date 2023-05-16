@@ -56,7 +56,7 @@ dependencies {
 
 
 
-  // DB + Connection Pool
+  // DB + Connection Pool + mybatis
 
 
 
