@@ -3,7 +3,7 @@ plugins {
     id 'war'
 }
 
-group 'com.hi.deptspring'
+group 'com.hi'
 version '1.0-SNAPSHOT'
 
 repositories {

@@ -1,0 +1,29 @@
+클라이언트 -> 서버
+	요청 : URI(주소) -> 의미부여 => 자원(Data) : 경로 설계 /dept/{pk}
+		서버 -> 매핑 ~> 실행 메소드
+	응답 : html 문서 ~> 브라우저
+	REST : 요청,응답 시 주고받는 data는 html이 아니라 XML / JSON => text
+	{
+	"속성" : 값
+	"속성" : 값
+	(" " -> JSON)
+	}
+	spring + 라이브러리 
+	@Responsebody => JSON 형식으로 반환
+	@Responsebody -> view Resolver 로 view 생성 X => 데이터를 반환만 하겠다. 
+http)
+get
+post
+put
+delete
+
+URI는 자원을 표현하는 데에 집중하고
+행위에 대한 정의는 HTTP METHOD를 통해 하는 것이
+REST API를 설계하는 규칙. 
+
+REST 리소스 간에는 연관 관계가 있는 경우 다음과 같이 표현
+
+ /리소스명/리소스 ID/관계가 있는 다른 리소스명 
+
+ex) GET : /users/{userid}/devices
+
