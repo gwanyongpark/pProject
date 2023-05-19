@@ -29,7 +29,17 @@ public class ConnetionTest {
     private BoardMapper boardMapper;
 
     @Test
-    public void boardListTest(){
+    public void selectByBnoTest(){
+        BoardDTO board = boardMapper.selectByBno(1);
+        log.info("1번 게시물 : " +board);
+        board = boardMapper.selectByBno(7);
+        log.info("6번 게시물 : " +board);
+
+
+    }
+
+    @Test
+    public void deptListTest(){
 
         List<BoardDTO> list = boardMapper.selectAll();
 
