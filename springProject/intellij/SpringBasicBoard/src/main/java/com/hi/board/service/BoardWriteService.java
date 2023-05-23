@@ -47,7 +47,6 @@ public class BoardWriteService {
 
         // mapper.Insert
 
-        // DB에 저장할 파일 이름을 만들고 전달
         return boardMapper.insertBoard(board);
     }
 }

@@ -18,47 +18,51 @@
 </head>
 <body>
 
-  <h1>게시글 보기</h1>
-  <hr>
-    <table border="1">
-        <tr>
-            <td>게시글 번호</td>
-            <td> ${article.bno} </td>
-        </tr>
-        <tr>
-            <td>제목</td>
-            <td> ${article.title} </td>
-        </tr>
-        <tr>
-            <td>내용</td>
-            <td> ${article.content} </td>
-        </tr>
-        <tr>
-            <td>작성자</td>
-            <td> ${article.writer} </td>
-        </tr>
-        <c:if test="${article.file ne null}">
+<h1>게시글 보기</h1>
+<hr>
+${loginInfo}
+<hr>
+<table border="1">
+    <tr>
+        <td>게시글 번호</td>
+        <td>${article.bno}</td>
+    </tr>
+    <tr>
+        <td>글 제목</td>
+        <td>${article.title}</td>
+    </tr>
+    <tr>
+        <td>내용</td>
+        <td>${article.content}</td>
+    </tr>
+    <tr>
+        <td>작성자</td>
+        <td>${article.writer}</td>
+    </tr>
+    <c:if test="${article.file ne null}">
         <tr>
             <td>첨부파일<br>(이미지)</td>
             <td>
                 <img src="/uploadfile/board/${article.file}" width="300">
             </td>
         </tr>
-        </c:if>
-        <tr>
-            <td>등록일</td>
-            <td> ${article.regdate} </td>
-        </tr>
-        <tr>
-            <td>수정일</td>
-            <td> ${article.updatedate} </td>
-        </tr>
+    </c:if>
+    <tr>
+        <td>등록일</td>
+        <td>${article.regdate}</td>
+    </tr>
+    <tr>
+        <td>수정일</td>
+        <td>${article.updatedate}</td>
+    </tr>
+</table>
 
-    </table>
+    <a href="/board/list">LIST</a>
 
-  <a href="/board/list">LIST</a>
-  <a href="/board/modify?bno=${article.bno}">수정</a>
-  <a href="/board/delete?bno=${article.bno}">삭제</a>
+    <c:if test="${loginInfo.idx eq article.memidx}">
+    <a href="/board/modify?bno=${article.bno}">수정</a>
+    <a href="/board/delete?bno=${article.bno}">삭제</a>
+    </c:if>
 
 </body>
 </html>
