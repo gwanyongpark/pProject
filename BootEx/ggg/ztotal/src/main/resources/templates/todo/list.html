@@ -33,7 +33,7 @@
           <tbody>
           <tr th:each="todo :${pageResponseDTO.list}">
             <td>1.</td>
-            <td>[[todo]]</td>
+            <td>[[${todo.tno}]]</td>
             <td>
               <div class="progress progress-xs">
                 <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
@@ -48,17 +48,89 @@
       </div>
       <!-- /.card-body -->
       <div class="card-footer clearfix">
-        <ul class="pagination pagination-sm m-0 float-right">
-          <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+        <ul class="pagination pagination-sm m-0 float-right todoUL">
+          <li class="page-item"><a class="page-link" href="10">&laquo;</a></li>
+          <li class="page-item"><a class="page-link" href="11">11</a></li>
+          <li class="page-item"><a class="page-link" href="12">12</a></li>
+          <li class="page-item"><a class="page-link" href="13">13</a></li>
+          <li class="page-item"><a class="page-link" href="21">&raquo;</a></li>
         </ul>
       </div>
     </div>
     <!-- /.card -->
 
+    <form class="actionForm" action="/todo/list" method="get">
+      <input type="hidden" name="page" value="3">
+      <input type="hidden" name="size" th:value="${pageRequestDTO.size}">
+    </form>
   </div>
+
+  <script layout:fragment="script" th:inline="javascript">
+
+    const actionForm = document.querySelector(".actionForm")
+    const pageObj = actionForm.querySelector("input[name='page']")
+    const todoUL = document.querySelector(".todoUL")
+
+    todoUL.addEventListener("click", (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+
+      const target = e.target
+      const pageNum = target.getAttribute("href")
+
+      pageObj.value = pageNum
+      actionForm.submit()
+
+    }, false)
+
+
+    const {page,size} = [[${pageRequestDTO}]]
+
+    console.log(page,size)
+
+    const {total} = [[${pageResponseDTO}]]
+
+    console.log("total:" + total)
+
+    function makePages(page, size, total){
+      console.log(page,size,total)
+
+      const startNum = (Math.ceil(page/10) * 10) -9
+
+      console.log("startNum: " , startNum)
+
+      let result =""
+      //이전 
+      if(startNum !== 1){
+        result +=`<li class="page-item"><a class="page-link" href="${startNum -1}">&laquo;</a></li>`
+      }
+
+      let temp = startNum
+      while(true){
+
+        if(temp * size > total){
+          break;
+        }
+        console.log(temp) 
+
+        result += `<li class="page-item"><a class="page-link" href="${temp}">${temp}</a></li>`
+
+        temp++;
+
+      }//end while
+
+      if( total % (size * 10)  === 1){
+        result +=`<li class="page-item"><a class="page-link" href="${startNum + 10}">&raquo;</a></li>`
+      }
+
+      console.log(result)
+      return result
+    }
+
+    const pageLIStr = makePages(page,size, total)
+    todoUL.innerHTML = pageLIStr
+
+  </script>
+
 </body>
 </html>
