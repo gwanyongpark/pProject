@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Product Register Page</h1>
+
+  <input class="uploadInput" type="file" name="upload" multiple >
+  <button class="uploadBtn">UPLOAD</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+
+    const uploadBtn = document.querySelector(".uploadBtn")
+    const uploadInput = document.querySelector(".uploadInput")
+
+    uploadBtn.addEventListener("click", e => {
+      e.preventDefault()
+      e.stopPropagation()
+
+      console.dir(uploadInput.files)
+
+      if(!uploadInput.files || uploadInput.files.length === 0){
+        return
+      }
+
+      const formData = new FormData()
+
+      for(let i = 0; i < uploadInput.files.length ; i++){
+        formData.append("files",uploadInput.files[i] )
+      }
+
+      console.dir(formData)
+
+      const header = {headers: {"Content-Type": "multipart/form-data"}}
+
+      axios.post('http://localhost:8080/upload', formData, header)
+
+
+    },false)
+
+  </script>
+</body>
+</html>
